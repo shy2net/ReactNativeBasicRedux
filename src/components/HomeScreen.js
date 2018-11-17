@@ -1,16 +1,27 @@
 import React, { Component } from 'react'
-import { Text, View } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
+import { connect } from 'react-redux'
 
-export default class HomeScreen extends Component {
+export class HomeScreen extends Component {
   static navigationOptions = {
     title: 'Home',
   };
-  
+
   render() {
     return (
       <View>
-        <Text> textInComponent </Text>
+        <TouchableOpacity onPress={() => this.props.navigation.navigate('Second')}><Text>Hello</Text></TouchableOpacity>
       </View>
     )
   }
 }
+
+const mapStateToProps = (state) => ({
+  
+})
+
+const mapDispatchToProps = {
+  
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(HomeScreen)

@@ -17,21 +17,21 @@ const middleware = createReactNavigationReduxMiddleware(
   state => state.nav,
 );
 
-const App = reduxifyNavigator(AppNavigator, "root");
+const NavApp = reduxifyNavigator(AppNavigator, "root");
 const mapStateToProps = (state) => ({
   state: state.nav,
 });
-const AppWithNavigationState = connect(mapStateToProps)(App);
+const AppWithNavigationState = connect(mapStateToProps)(NavApp);
 
 const store = createStore(
   appReducer,
   applyMiddleware(middleware),
 );
 
-const AppA = () => (
+const App = () => (
   <Provider store={store}>
     <AppWithNavigationState />
   </Provider>
 );
 
-export default AppA;
+export default App;

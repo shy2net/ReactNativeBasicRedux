@@ -7,9 +7,11 @@ import {
 } from 'react-navigation-redux-helpers';
 
 import HomeScreen from '../components/HomeScreen';
+import SecondScreen from '../components/SecondScreen';
 
 export const AppNavigator = createStackNavigator({
-  Home: HomeScreen
+  Home: HomeScreen,
+  Second: SecondScreen
 }, {
   initialRouteName: 'Home'
 });

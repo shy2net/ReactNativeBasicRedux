@@ -1,7 +1,3 @@
-export const selectLibrary = (libraryId) => {
-    return {
-      type: 'select_library',
-      payload: libraryId
-    };
-  };
-  
+export function addToCounter() {
+  return { type: 'ADD_COUNTER' };
+}
