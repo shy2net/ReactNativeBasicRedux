@@ -1,12 +1,18 @@
-export default (state = null, action) => {
-    switch (action.type) {
-      case 'select_library':
-        if (state === action.payload) {
-            return null;
-        }
-        return action.payload;
-      default:
-        return state;
-    }
-  };
-  
+import {
+  createStackNavigator,
+} from 'react-navigation';
+
+import {
+  createNavigationReducer
+} from 'react-navigation-redux-helpers';
+
+import HomeScreen from '../components/HomeScreen';
+
+export const AppNavigator = createStackNavigator({
+  Home: HomeScreen
+}, {
+  initialRouteName: 'Home'
+});
+
+const navReducer = createNavigationReducer(AppNavigator);
+export default navReducer;
